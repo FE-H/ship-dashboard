@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses : actions/checkout@v7
-      - uses : docker/login-action@v3
+      - uses : docker/login-action@v4
         with:
           registery: ghcr.io
           username: ${{ github.repository_owner }}
@@ -24,6 +24,6 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository }}:latest
-          
+
 permissions:
   packages: write
